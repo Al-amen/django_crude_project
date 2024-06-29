@@ -1,0 +1,30 @@
+
+{% extends 'firstapp/base.html' %}
+{% load static %}
+
+
+
+{% block block_body %}
+  
+  
+  {% if musician_list %}
+   <h3>Musician list</h3>
+    
+    {% for item in musician_list %}
+        <ul>
+            <a href="{% url 'firstapp:albumblist' artist_id=item.id %}">
+                <li>{{item.first_name}} {{item.last_name}}</li></a>
+        </ul>
+    {% endfor %}
+        
+  {% else %}
+    <h3>No Musician is Available now!</h3>
+  {% endif %}
+    
+    
+
+{% endblock block_body %}
+    
+
+
+

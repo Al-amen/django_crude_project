@@ -1,0 +1,15 @@
+{% extends 'firstapp/base.html' %}
+
+
+{% block block_body %}
+ <h2>Edit page</h2>
+  
+ <form action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input class="btn btn-info btn-sm" type="submit" name="submit" value="Update">
+ </form> <br>
+ <a href=" {% url 'firstapp:delete_artist' artist_id=artist_id  %}" class = "btn btn-danger btn-sm" onclick = "return confirm('Are you sure to delate?')">Delete</a>
+    
+{% endblock block_body %}
+    

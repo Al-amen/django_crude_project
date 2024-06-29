@@ -1,0 +1,42 @@
+
+{% extends 'firstapp/base.html' %}
+{% load static %}
+
+
+
+{% block block_body %}
+
+
+
+<h1>Artist Informations</h1>
+<h4>Artist Name: {{musician_info.first_name}} {{musician_info.last_name}}<h4> 
+<h4>Instrument: {{musician_info.instrument}}</h4>
+<h4>Rating: {{artist_rating.nums_strs__avg}}</h4>
+
+<a href="{% url 'firstapp:edit_artist' artist_id=musician_info.id %}" class="btn btn-success btn-sm">Edit</a>
+
+<h1>Albumb List</h1>
+
+
+<table class = "table table-borderd" >
+    <tr>
+        <th>Artist</th>
+        <th>Albumb_Name</th>
+        <th>Relase Date</th>
+        <th>Rating</th>
+    </tr>
+    
+    {% for item in albumb_list %}
+     
+        <tr>
+            <td><a href="{% url 'firstapp:edit_albumb' albumb_id=item.id %}">{{item.artist}}</a></td>
+            <td><a href="{% url 'firstapp:edit_albumb' albumb_id=item.id %}">{{item.name}}</a></td>
+            <td><a href="{% url 'firstapp:edit_albumb' albumb_id=item.id %}">{{item.relase_date | date:'M d, Y'}}</a></td>
+            <td><a href="{% url 'firstapp:edit_albumb' albumb_id=item.id %}">{{item.nums_strs}}</a></td>
+        </tr>
+    {% endfor %}
+        
+</table>
+
+{% endblock block_body %}
+    

@@ -1,0 +1,16 @@
+
+{% extends 'firstapp/base.html' %}
+{% load static %}
+
+
+
+{% block block_body %}
+<h3>Musician Form</h3>
+ <form action="" method="POST" >
+    {% csrf_token %}
+    {{new_form.as_p}}
+    <input type="submit" name="submit" value="Add" class="btn btn-primary btn-sm">
+ </form>
+
+{% endblock block_body %}
+    

@@ -1,0 +1,26 @@
+{% extends 'firstapp/base.html' %}
+{% load static %}
+
+{% block title %}
+    Add musician
+{% endblock title %}
+
+
+{% block css %}
+   <link rel="stylesheet" href="{% static 'css/firstapp/form.css' %}"> 
+{% endblock css %}
+    
+
+{% block block_body %}
+<h1>{{text}}</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    {{new_form.as_p}}
+    <input type="submit" value = "Submit">
+</form>
+{% endblock block_body %}
+    
+
+
+
+

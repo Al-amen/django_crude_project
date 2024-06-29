@@ -1,0 +1,18 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 20px;
+   
+}
+h1{
+    color: #904547;
+    text-align: center;
+}
+
+form{
+    width: 400px;
+    background-color: azure;
+    text-align: center;
+    padding: 20px;
+    margin: auto;
+}
